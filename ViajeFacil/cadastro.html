@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Cadastro - ViajeFácil</title>
+</head>
+<body>
+  
+<div class="d-lg-flex half">
+    <div class="bg order-1 order-md-1" style="background-image: url('images/bg_1.jpg');"></div>
+    <div class="contents order-2 order-md-2">
+
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <h3>Cadastro na <strong>viajeFácil</strong></h3>
+                    <p class="mb-4">Preencha os campos abaixo para se cadastrar em nossa plataforma.</p>
+                    <form action="./controller/InsertUser.php" method="post" onsubmit="return verificarSenhas()">
+                        <div class="form-group first">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" class="form-control" placeholder="Seu nome completo" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group first">
+                            <label for="email">Email</label> 
+                            <input type="email" class="form-control" placeholder="Seu email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" class="form-control" placeholder="Seu telefone" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" placeholder="Sua senha" id="senha" name="senha" required>
+                        </div>
+                        <div class="form-group last mb-3">
+                            <label for="confirmar_senha">Confirmar Senha</label>
+                            <input type="password" class="form-control" placeholder="Confirme sua senha" id="confirmar_senha" name="confirmar_senha" required>
+                        </div>
+                        
+                        <input type="submit" value="Cadastrar" class="btn btn-block btn-primary">
+                    </form>
+                    <br>
+                    <p id="erro-senha" style="color: red; display: none;">As senhas devem ser iguais!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+    function verificarSenhas() {
+        var senha = document.getElementById("senha").value;
+        var confirmarSenha = document.getElementById("confirmar_senha").value;
+        var erroSenha = document.getElementById("erro-senha");
+
+        if (senha !== confirmarSenha) {
+            erroSenha.style.display = "block";
+            return false; 
+        }
+        
+        erroSenha.style.display = "none";
+        return true; 
+    }
+</script>
+</body>
+</html>

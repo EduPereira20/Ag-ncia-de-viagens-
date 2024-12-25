@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ViajeFácil - Cadastro de Viagens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/programar-viagens.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.5;
+            background: #003A66;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 10px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        .hero { 
+            padding: 5rem 2rem; 
+            background: #003A66;
+            display: flex; 
+            align-items: center; 
+            margin-left: 0; 
+        }
+
+        .hero h1 {
+            margin-left: 100px;
+            color: #ffffff;
+            font-size: 60px;
+        }
+
+        .form-container {
+            max-width: 500px; 
+            margin-left: 150px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            background: #e02454;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            width: 100%; 
+        }
+
+        button:hover {
+            opacity: .8;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between; 
+            flex-wrap: wrap; 
+        }
+
+        .form-group {
+            flex: 1; 
+            min-width: 150px; 
+            margin-right: 10px; 
+        }
+
+        .form-group:last-child {
+            margin-right: 0; 
+        }
+
+        .form-row-title {
+            display: flex;
+            justify-content: space-between; 
+            margin-bottom: 10px; 
+        }
+
+        @media (max-width: 600px) {
+            .form-group {
+                min-width: 100%;
+                margin-right: 0; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="social-media">
+            <a href="https://wa.me/5561981009639?text=Oi%2C%20tudo%20bem%3F" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@LATAMAirlines_BR" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/eduardo.pereiradv?igsh=anFyMnJ0OWdoMGg3" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div>
+            <a href="ajuda.html">Ajuda</a>
+            <a href="contatos.html">Contatos</a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="images/brand-logo.png" alt="Logo" class="brand-logo">
+            <p>ViajeFácil</p>
+        </div>
+        <div class="navbar-links">
+            <a href="home.html">Principal</a>
+            <a href="programe-viagens.html">Programe viagens</a>
+            <a href="./controller/revisar-viagens.php">Altere suas viagens</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="intro-wrap">
+                        <h1 class="mb-5"><span class="d-block">Agende sua viagem</span></h1> <!-- Título adicionado aqui -->
+    
+                        <div class="form-container">
+                            <form class="form" method="post" action="./controller/insertViagem.php"> <!-- Verifique se 'sua_acao.php' é o arquivo correto -->
+                                <div class="form-row-title">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="destino">Destino</label>
+                                        <select name="destino" id="destino" required>
+                                            <option value="">Escolha um destino</option>
+                                            <option value="japao">Japão</option>
+                                            <option value="suica">Suíça</option>
+                                            <option value="tailandia">Tailândia</option>
+                                            <option value="brasil">Brasil</option>
+                                            <option value="estados-unidos">Estados Unidos</option>
+                                            <option value="israel">Israel</option>
+                                            <option value="china">China</option>
+                                            <option value="russia">Rússia</option>
+                                            <option value="franca">França</option>
+                                            <option value="italia">Itália</option>
+                                            <option value="espanha">Espanha</option>
+                                            <option value="alemanha">Alemanha</option>
+                                            <option value="portugal">Portugal</option>
+                                            <option value="inglaterra">Inglaterra</option>
+                                            <option value="canada">Canadá</option>
+                                            <option value="mexico">México</option>
+                                            <option value="australia">Austrália</option>
+                                            <option value="nova-zelandia">Nova Zelândia</option>
+                                            <option value="grecia">Grécia</option>
+                                            <option value="turquia">Turquia</option>
+                                            <option value="africa-do-sul">África do Sul</option>
+                                            <option value="argelia">Argélia</option>
+                                            <option value="egito">Egito</option>
+                                            <option value="india">Índia</option>
+                                            <option value="costa-rica">Costa Rica</option>
+                                            <option value="chile">Chile</option>
+                                            <option value="argentina">Argentina</option>
+                                            <option value="colombia">Colômbia</option>
+                                            <option value="peru">Peru</option>
+                                            <option value="suecia">Suécia</option>
+                                            <option value="dinamarca">Dinamarca</option>
+                                            <option value="noruega">Noruega</option>
+                                            <option value="finlandia">Finlândia</option>
+                                            <option value="irlanda">Irlanda</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="data-ida">Data de ida</label>
+                                        <input type="date" class="form-control" id="data-ida" name="data-ida" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="data-volta">Data de volta</label>
+                                        <input type="date" class="form-control" id="data-volta" name="data-volta" required>
+                                    </div>
+                                </div>
+                                <div class="form-row-title">
+                                    <label></label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="adultos" name="adultos" placeholder="Nº de Adultos" min="0" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="criancas" name="criancas" placeholder="Nº de Crianças" min="0" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit">Registrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="slides">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
